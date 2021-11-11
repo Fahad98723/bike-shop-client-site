@@ -28,6 +28,10 @@ const Register = () => {
     return (
         <div>
             <Container className= 'text-center py-5'>
+                <div className="heading mb-5">
+                    <h3>If You Are New User Here Then Please</h3>
+                    <h1>Create An Account</h1>
+                </div>
             <form onSubmit= {formHandle}>
                 <input onBlur={handleOnBlur} className= 'py-1 mb-3' type="text" name="name" id="" placeholder='Your Name' />
                 <br />

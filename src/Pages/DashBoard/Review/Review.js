@@ -54,7 +54,7 @@ const Review = () => {
                 <br />
                 <input onBlur={handleOnBlur} className= 'py-1 mb-3 w-100' type="text" name="profession" id="" placeholder='Your Profession' />
                 <br />
-                <input min='0' max='5' onBlur={handleOnBlur} type='number' className= 'py-1 mb-3 w-100' name="rating" step="0.5" id="" placeholder='Rate Number' />
+                <input min='0' max='5' onBlur={handleOnBlur} type='number' className= 'py-1 mb-3 w-100' name="rating" step=".5" id="" placeholder='Rate Number' />
                 <br />
                 <textarea rows='7' onBlur={handleOnBlur} className= 'py-1 mb-3 w-100' name="message" id="" placeholder='Your Message' />
                 <br />               
@@ -62,7 +62,7 @@ const Review = () => {
                 <br />
                 {
                     reviewDone && <Alert  variant='success'>
-                        You Successfully Reviewd . Thank You For Your Words.
+                        You Successfully Reviewed . Thank You For Your Words.
                     </Alert>
                 }
             </form>

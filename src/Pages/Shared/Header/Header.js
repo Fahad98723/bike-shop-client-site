@@ -20,7 +20,7 @@ const Header = () => {
                     </>
                 }
             <Navbar.Text>
-                {user?.email || user?.displayName ? <h6 className='mx-3 my-3 fw-bold'><i  className="fas fa-user-check fs-5 "></i> {user?.displayName}</h6> : ''}
+                {user?.email || user?.displayName ? <h6 className='mx-3 my-3 fw-bold text-primary'><i  className="fas fa-user-check fs-5 "></i> {user?.displayName}</h6> : ''}
              </Navbar.Text>
             {
                 user?.email || user?.displayName ? 

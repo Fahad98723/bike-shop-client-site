@@ -9,11 +9,8 @@
     font-size: 35px;
 }
 .menu {
-    font-size: 22px;
+    font-size: 20px;
 }
 .menu a:hover {
-    color: orange;
-}
-.menu .active {
     color: orange;
 }

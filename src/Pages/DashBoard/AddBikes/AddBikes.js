@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import { useHistory } from 'react-router';
 import img1 from '../../../images/pngwing.com.png'
 import './AddBikes.css'
 const AddBikes = () => {

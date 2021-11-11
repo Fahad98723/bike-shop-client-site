@@ -9,7 +9,7 @@ const AboutUs = () => {
         <div className='py-5'>
             <Container>
                 <Row>
-                    <Col md={7}>
+                    <Col sm={12} md={7}>
                         <div className="heading mb-4">
                         <h3>Want To Know About Us?</h3>
                         <h1>About Us</h1>
@@ -21,8 +21,8 @@ const AboutUs = () => {
                         <button className="btn btn-success">Read More</button>
                         </div>
                     </Col>
-                    <Col className='upcoming' md={5}>
-                    <Carousel style={{width : '350px'}} >
+                    <Col className='upcoming' sm={12} md={5}>
+                    <Carousel style={{width : '320px'}} >
                             <Carousel.Item >
                                 <img
                                 className="d-block w-100"

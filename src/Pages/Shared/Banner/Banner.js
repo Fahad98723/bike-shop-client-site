@@ -10,7 +10,11 @@ const Banner = () => {
                     <Col md={6} className='align-items-center'>
                         <h2><span style={{color:'orange', fontFamily: `'Architects Daughter', cursive`, fontSize : '50px'}}>Be A Rider  </span> <br />
                         And Ride Your Favourite Bike</h2>
-                        <InputGroup className="my-3">
+                    
+                    <button className="btn btn-warning ">
+                        <Link className='text-dark fw-bold' to ='/allBikes'>Explore</Link>
+                    </button>
+                    <InputGroup className="my-3">
                         <FormControl
                         placeholder="Find Your Favourite Bike"
                         aria-label="Find Your Favourite Bike"
@@ -20,9 +24,6 @@ const Banner = () => {
                         Find
                         </button>
                     </InputGroup>
-                    <button className="btn btn-warning ">
-                        <Link className='text-dark' to ='/allBikes'>Explore</Link>
-                    </button>
                     </Col>
                 </Row>
             </Container>

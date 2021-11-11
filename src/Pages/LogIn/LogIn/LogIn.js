@@ -63,6 +63,10 @@ const LogIn = () => {
     return (
         <div>
             <Container className= 'text-center py-5'>
+                <div className="heading mb-5">
+                    <h3>If You Allready Have An Account Please</h3>
+                    <h1>Log In</h1>
+                </div>
             <form onSubmit= {formHandle}>
                 <input onBlur={handleOnBlur} className= 'py-1 mb-3' type="email" name="email" id="" placeholder='Your Email' />
                 <br />

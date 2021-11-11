@@ -43,8 +43,9 @@ const ManageAllOrder = () => {
                 <thead>
                     <tr>
                     <th>Name</th>
-                    <th>Address</th>
                     <th>Bike Name</th>
+                    <th>Address</th>
+                    <th>Zip</th>
                     <th>Price</th>
                     <th>Status</th>
                     <th>Update Status</th>
@@ -56,6 +57,7 @@ const ManageAllOrder = () => {
                     <tr>
                     <td>{order.name}</td>
                     <td>{order.address}</td>
+                    <td>{order.zip}</td>
                     <td>{order.bikeName}</td>
                     <td>$ {order.price}</td>
                     <td>{

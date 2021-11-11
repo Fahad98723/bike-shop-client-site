@@ -38,7 +38,7 @@ const ManageAllProducts = () => {
                         <Card style={{ width: '100%',background : '#116466',color : 'white',border :'none'  }}>
                             <Card.Img style={{height : '250px'}} variant="top" src={bike.image} />
                             <Card.Body>
-                                <Card.Title>{bike.name}</Card.Title>
+                                <Card.Title className='text-warning fs-4'>{bike.name}</Card.Title>
                                 <Card.Text>
                                 {bike.details.slice(0,100)}
                                 </Card.Text>

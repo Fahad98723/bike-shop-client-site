@@ -20,7 +20,7 @@ import './DashBoard.css'
 
 const DashBoard = () => {
     let { path, url } = useRouteMatch();
-    const {isAdmin, user} = useAuth()
+    const {isAdmin, user,logOut} = useAuth()
     return (
         <div>
             <Container>
@@ -29,7 +29,7 @@ const DashBoard = () => {
                     <h2 className='mt-2'>DashBoard</h2>
                         <ul className='dashboard-navbar'>
                                {
-                                user && !isAdmin && <>
+                                user?.email && !isAdmin && <>
                                     
                                     <button className="btn btn-warning m-2">
                                     <Link to={`${url}`}>My Orders</Link>
@@ -43,9 +43,12 @@ const DashBoard = () => {
                                     <Link to={`${url}/review`}>Review</Link>
                                     </button>
                                     
-                                    
                                 </>
                             }
+                              <br />
+                                    <button onClick= {logOut} className="btn btn-warning m-2">
+                                    <Link>Log Out</Link>
+                                    </button>
                             {
                                 isAdmin && <>
                                 <button className="btn btn-warning m-2 d-flex align-items-center">
