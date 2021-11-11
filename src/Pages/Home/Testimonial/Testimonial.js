@@ -17,7 +17,7 @@ const Testimonial = () => {
                     <h3>What Clients Says About Us</h3>
                     <h1>TestiMonials</h1>
                 </div>
-                <Row>
+                <Row className='g-2'>
                 {
                     reviews.map(review => 
                         <Col lg='4' sm='12'>

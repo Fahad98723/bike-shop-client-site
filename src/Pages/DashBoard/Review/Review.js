@@ -16,22 +16,25 @@ const Review = () => {
     }
     const formHandle = e => {
         e.preventDefault()
-        const data = {...review}
-        data.name = user?.displayName
-        setReview(data)
+        const data = {
+            name : user?.displayName,
+            profession : review.profession,
+            rating : review.rating,
+            message : review.message
+        }
         fetch('http://localhost:5000/review', {
             method : "POST",
             headers : {
                 'content-type' : 'application/json'
             },
-            body : JSON.stringify(review)
+            body : JSON.stringify(data)
         })    
     }
     return (
         <div>
             <Container>
             <form onSubmit= {formHandle}>
-                <input className= 'py-1 mb-3 w-50' type="text" name="name" id="" placeholder='Your Name' value={user.displayName}/>
+                <input className= 'py-1 mb-3 w-50' type="text" name="name" id="" placeholder='Your Name' value={user?.displayName}/>
                 <br />
                 <input onBlur={handleOnBlur} className= 'py-1 mb-3 w-50' type="text" name="profession" id="" placeholder='Your Profession' />
                 <br />

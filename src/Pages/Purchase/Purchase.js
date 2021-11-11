@@ -34,7 +34,8 @@ const Purchase = () => {
             price : price,
             image : image,
             phone : purchaseDetails.phone,
-            address : purchaseDetails.address
+            address : purchaseDetails.address,
+            status : 'Pending'
         }
         fetch('http://localhost:5000/orderItems',{
             method : 'POST',

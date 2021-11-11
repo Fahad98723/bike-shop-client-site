@@ -17,7 +17,7 @@ const Bike = ({bike}) => {
                     <Card.Text>
                     $ {price}
                     </Card.Text>
-                    <button className="btn btn-danger "><Link className='text-white' to={`/purchase/${_id}`}>Purchase</Link></button>
+                    <button className="btn btn-warning "><Link className='text-dark' to={`/purchase/${_id}`}>Purchase</Link></button>
                 </Card.Body>
             </Card>
             </div>

@@ -19,7 +19,7 @@ const Bikes = () => {
                 </div>
                 <Row className ='gy-5'>
                         {
-                        bikes.map(bike => <Bike key={bike._id} bike = {bike}></Bike>)
+                        bikes.slice(0,6).map(bike => <Bike key={bike._id} bike = {bike}></Bike>)
                         }
                 </Row>
             </Container>

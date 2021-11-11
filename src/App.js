@@ -1,15 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Pages/Shared/Header/Header';
-import AddBikes from './Pages/AddBikes/AddBikes';
 import Footer from './Pages/Shared/Footer/Footer';
 import AllBikes from './Pages/AllBikes/AllBikes';
 import Register from './Pages/LogIn/Register/Register';
@@ -31,9 +28,6 @@ function App() {
              </Route>
              <Route  path = '/home'>
                <Home></Home>
-             </Route>
-             <Route  path = '/addBikes'>
-               <AddBikes></AddBikes>
              </Route>
              <Route  path = '/allBikes'>
                <AllBikes></AllBikes>

@@ -11,9 +11,7 @@ const  useFirebase =  () => {
     const [isLoading,setIsLoading] = useState(true)
     const [user,setUser] = useState({})
     const [error, setError] = useState('')
-    const [email, setEmail] = useState('')
-    const [password , setPassword] = useState('')
-    const [name, setName] = useState('')
+    const  [isAdmin, setIsAdmin] = useState(false)
 
     //google sign in 
     const googleSignIn = () => {
@@ -78,7 +76,13 @@ const  useFirebase =  () => {
         })
     }
 
-    return {googleSignIn,user,error, isLoading,signupWithEmailAndPass,loginWithEmailAndPass, setPassword, password, setEmail, email,logOut,setIsLoading,setName, name,setError,setUser,saveUser}
+    useEffect( () => {
+        fetch(`http://localhost:5000/users/${user?.email}`)
+        .then(res => res.json())
+        .then(data =>  setIsAdmin(data.admin))
+    },[user?.email])
+
+    return {googleSignIn,user,error, isLoading,signupWithEmailAndPass,loginWithEmailAndPass,logOut,setIsLoading,setError,setUser,saveUser,  isAdmin}
 }
 
 export default useFirebase
