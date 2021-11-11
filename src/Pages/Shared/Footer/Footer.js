@@ -38,7 +38,7 @@ const Footer = () => {
                         aria-label="Find Your Favourite Bike"
                         aria-describedby="basic-addon2"
                         />
-                        <button className="btn btn-dark" id="button-addon2">
+                        <button className="btn btn-warning" id="button-addon2">
                         Find
                         </button>
                     </InputGroup>

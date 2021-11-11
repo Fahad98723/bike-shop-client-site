@@ -4,3 +4,16 @@
 .navigation a {
     color: white;
 }
+.logo{
+    font-family: 'Irish Grover', cursive;
+    font-size: 35px;
+}
+.menu {
+    font-size: 22px;
+}
+.menu a:hover {
+    color: orange;
+}
+.menu .active {
+    color: orange;
+}

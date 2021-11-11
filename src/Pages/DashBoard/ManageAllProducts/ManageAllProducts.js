@@ -1,28 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 
 const ManageAllProducts = () => {
     const [bikes, setBikes] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/bikes')
+        fetch('https://shielded-inlet-60219.herokuapp.com/bikes')
         .then(res => res.json())
         .then(data => setBikes(data))
     },[])
     const handleDelete = id => {
-        fetch(`http://localhost:5000/bikes/${id}`, {
-            method : "DELETE"
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.deletedCount) {
-                alert("deleted successfully")
-                const remaining = bikes.filter(bike => bike._id !== id)
-                setBikes(remaining)
-            }
-        })
+        const confirm = window.confirm('Are you sure you want to delete the product')
+            if (confirm) {
+                fetch(`https://shielded-inlet-60219.herokuapp.com/bikes/${id}`, {
+                method : "DELETE"
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    alert("deleted successfully")
+                    const remaining = bikes.filter(bike => bike._id !== id)
+                    setBikes(remaining)
+                }
+            })
+        }
     }
     return (
         <div>
+            <Container>
             <div className="heading mb-5">
                     <h3>Remove Those Bike Which Are Out Of Stock</h3>
                     <h1>Bikes Managing</h1>
@@ -49,6 +53,7 @@ const ManageAllProducts = () => {
                     </Col>)
                         }
                 </Row>
+            </Container>
         </div>
     );
 };

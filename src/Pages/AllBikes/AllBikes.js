@@ -6,7 +6,7 @@ import Bike from '../Home/Bike/Bike';
 const AllBikes = () => {
     const [bikes, setBikes] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/bikes')
+        fetch('https://shielded-inlet-60219.herokuapp.com/bikes')
         .then(res => res.json())
         .then(data => setBikes(data))
     },[])

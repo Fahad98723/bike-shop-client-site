@@ -15,14 +15,14 @@ const AboutUs = () => {
                         <h1>About Us</h1>
                         </div>
                         <div className="details">
-                        <p>Motorcycle design varies greatly to suit a range of different purposes: long-distance travel, commuting, cruising, sport (including racing), and off-road riding. Motorcycling is riding a motorcycle and being involved in other related social activity such as joining a motorcycle club and attending motorcycle rallies.</p>
-                        <p> There are three major types of motorcycle: street, off-road, and dual purpose. Within these types, there are many sub-types of motorcycles for different purposes. There is often a racing counterpart to each type, such as road racing and street bikes, or motocross including dirt bikes.</p>
+                        <p>Motorcycle design varies greatly to suit a range of different purposes: long-distance travel, commuting, cruiycle and being involved in other related social activity such as joining a motorcycle club and attending motorcycle rallies.</p>
+                        <p> There are three major types of motorcycle: street, off-road, and duto each type, such as road racing and street bikes, or motocross including dirt bikes.</p>
 
-                        <button className="btn btn-warning">Read More</button>
+                        <button className="btn btn-success">Read More</button>
                         </div>
                     </Col>
                     <Col className='upcoming' md={5}>
-                    <Carousel >
+                    <Carousel style={{width : '350px'}} >
                             <Carousel.Item >
                                 <img
                                 className="d-block w-100"
@@ -30,8 +30,8 @@ const AboutUs = () => {
                                 alt="First slide"
                                 />
                                 <Carousel.Caption>
-                                    <h5>New Collection</h5>
-                                    <p>Coming Soon</p>
+                                    <h3 className='text-warning fw-bold'>New Collection</h3>
+                                    <h4 className='text-danger fw-bold'>Coming Soon</h4>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -41,8 +41,8 @@ const AboutUs = () => {
                                 alt="Second slide"
                                 />
                                 <Carousel.Caption>
-                                    <h5>New Collection</h5>
-                                    <p>Coming Soon</p>
+                                    <h3 className='text-warning fw-bold'>New Collection</h3>
+                                    <h4 className='text-danger fw-bold'>Coming Soon</h4>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
@@ -52,8 +52,8 @@ const AboutUs = () => {
                                 alt="Third slide"
                                 />
                                 <Carousel.Caption>
-                                    <h5>New Collection</h5>
-                                    <p>Coming Soon</p>
+                                    <h3 className='text-warning fw-bold'>New Collection</h3>
+                                    <h4 className='text-danger fw-bold'>Coming Soon</h4>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             </Carousel>

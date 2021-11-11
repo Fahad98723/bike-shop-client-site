@@ -26,16 +26,17 @@ const DashBoard = () => {
             <Container>
                 <Row>
                     <Col style={{background : '#d1e8e2'}} lg={3} sm={12}>
-                    <h2 className='mt-5'>DashBoard</h2>
+                    <h2 className='mt-2'>DashBoard</h2>
                         <ul className='dashboard-navbar'>
                                {
                                 user && !isAdmin && <>
+                                    
                                     <button className="btn btn-warning m-2">
-                                    <Link to={`${url}/pay`}>Pay</Link>
+                                    <Link to={`${url}`}>My Orders</Link>
                                     </button>
                                     <br />
                                     <button className="btn btn-warning m-2">
-                                    <Link to={`${url}`}>My Orders</Link>
+                                    <Link to={`${url}/pay`}>Pay</Link>
                                     </button>
                                     <br />
                                     <button className="btn btn-warning m-2">
@@ -47,23 +48,27 @@ const DashBoard = () => {
                             }
                             {
                                 isAdmin && <>
-                                <button className="btn btn-warning m-2">
+                                <button className="btn btn-warning m-2 d-flex align-items-center">
+                                <i className="far fa-plus-square me-2 fs-4"></i>
                                     <Link to={`${url}`}>Add A Product</Link>
                                 </button>
 
                                 
 
-                                <button className="btn btn-warning m-2">
+                                <button className="btn btn-warning m-2 d-flex align-items-center">
+                                <i className="fas fa-users-cog me-2 fs-4"></i>
                                     <Link to={`${url}/makeAdmin`}>Make Admin</Link>
                                 </button>
 
 
-                                <button className="btn btn-warning m-2">
+                                <button className="btn btn-warning m-2 d-flex align-items-center">
+                                <i className="fas fa-cogs me-2 fs-4"></i>
                                     <Link to={`${url}/manageAllOrders`}>Manage All Orders</Link>
                                 </button>
 
                                 
-                                <button className="btn btn-warning m-2">
+                                <button className="btn btn-warning mt-2 ms-2 d-flex align-items-center">
+                                <i className="fas fa-diagnoses m-1 fs-4"></i>
                                     <Link to={`${url}/manageAllProducts`}>Manage All Products</Link>
                                 </button>
                               

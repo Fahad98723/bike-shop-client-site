@@ -1,15 +1,15 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Alert, Col, Container, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router';
+import img1 from '../../../images/pngwing.com.png'
 import './AddBikes.css'
 const AddBikes = () => {
     const { register, handleSubmit, reset } = useForm();
-    const history = useHistory()
-
+    const [addedBike ,setAddedBike] = useState(false)
     //add new bikes data send on server
     const onSubmit = data => {
-        fetch('http://localhost:5000/bikes', {
+        fetch('https://shielded-inlet-60219.herokuapp.com/bikes', {
             method : 'POST',
             headers : {
                 'content-type' : 'application/json'
@@ -19,9 +19,8 @@ const AddBikes = () => {
         .then(res => res.json())
         .then(data => {
             if (data.insertedId) {
-                alert('Added succesfully')
+                setAddedBike(true)
                 reset()
-                // history.push('/')
             }
         })
     };
@@ -40,11 +39,16 @@ const AddBikes = () => {
                                 <input required placeholder='Bike Image' {...register("image")} />
                                 <input required placeholder='Bike Price' type="number" {...register("price")} />
                                 <input className='btn btn-warning' type="submit" value='Add New Bike' />
+                                {
+                                    addedBike && <Alert  variant='success'> Sir
+                                    You Added Product Successfully . Thank You Sir.
+                                </Alert>
+                                }
                             </form>
                         </Col>
-                        {/* <Col lg='6'>
+                        <Col lg='6'>
                             <img src={img1} alt="" className="img-fluid" />
-                        </Col> */}
+                        </Col>
                     </Row>
             </Container>
         </div>

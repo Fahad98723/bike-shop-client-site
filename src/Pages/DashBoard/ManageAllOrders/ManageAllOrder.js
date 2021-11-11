@@ -4,19 +4,20 @@ import { Container, Table } from 'react-bootstrap';
 const ManageAllOrder = () => {
     const [allOrders, setAllOrders] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/orderItems')
+        fetch('https://shielded-inlet-60219.herokuapp.com/orderItems')
         .then(res => res.json())
         .then(data => setAllOrders(data))
     },[allOrders])
     const handleDelete  = id => {
         const confirm = window.confirm("Are You Sure You Want To Cancel ?")
         if (confirm) {
-            fetch(`http://localhost:5000/orderItems/${id}`,{
+            fetch(`https://shielded-inlet-60219.herokuapp.com/orderItems/${id}`,{
             method : "DELETE"
         })
         .then(res => res.json())
         .then(data => {
             if (data.deletedCount) {
+                alert('You cancel order successfully')
                 const remaining = allOrders.filter(order => order._id !== id)
                 setAllOrders(remaining)
             }
@@ -27,7 +28,7 @@ const ManageAllOrder = () => {
         const data = allOrders.find(order => order._id === id)
         const dataUpdate = {...data}
         dataUpdate.status = 'Approved'
-        fetch(`http://localhost:5000/orderItems/${id}`,{
+        fetch(`https://shielded-inlet-60219.herokuapp.com/orderItems/${id}`,{
             method : "PUT",
             headers : {
                 'content-type' : 'application/json'

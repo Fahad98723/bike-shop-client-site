@@ -1,4 +1,3 @@
-import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
@@ -9,21 +8,23 @@ const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([])
     const email = user?.email
     useEffect(() => {
-        fetch(`http://localhost:5000/orderItems?email=${email}`)
+        fetch(`https://shielded-inlet-60219.herokuapp.com/orderItems?email=${email}`)
         .then(res => res.json())
         .then(data => setMyOrders(data))
     },[email])
     const handleDelete  = id => {
         const confirm = window.confirm("Are You Sure You Want To Cancel ?")
         if (confirm) {
-            fetch(`http://localhost:5000/orderItems/${id}`,{
+            fetch(`https://shielded-inlet-60219.herokuapp.com/orderItems/${id}`,{
             method : "DELETE"
         })
         .then(res => res.json())
         .then(data => {
             if (data.deletedCount) {
+                alert('Order Cancel Successfully')
                 const remaining = myOrders.filter(order => order._id !== id)
                 setMyOrders(remaining)
+
             }
         })
         }

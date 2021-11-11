@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" sticky= 'top' className='py-2 navigation'>
         <Container>
-        <Navbar.Brand className='logo' as={Link} to="/home">Triangle Bike</Navbar.Brand>
+        <Navbar.Brand className='logo text-warning' as={Link} to="/home">Triangle Bike</Navbar.Brand>
         <Navbar.Toggle />
              <Navbar.Collapse className="justify-content-end menu">
                  <Nav.Link as={Link} to="/home">Home</Nav.Link>

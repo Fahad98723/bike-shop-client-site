@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 import purchaseImage from '../../images/purchase.png'
@@ -8,9 +8,9 @@ const Purchase = () => {
     const {user} = useAuth()
     const {id}= useParams()
     const {name, image, details, price} = purchase
-    
+    const [purchaseConfirm, setPurchaseConfirm] = useState(false)
     useEffect(() => {
-        fetch(`http://localhost:5000/bikes/${id}`)
+        fetch(`https://shielded-inlet-60219.herokuapp.com/bikes/${id}`)
         .then(res => res.json())
         .then(data => setPurchase(data))
     },[id])
@@ -37,7 +37,7 @@ const Purchase = () => {
             address : purchaseDetails.address,
             status : 'Pending'
         }
-        fetch('http://localhost:5000/orderItems',{
+        fetch('https://shielded-inlet-60219.herokuapp.com/orderItems',{
             method : 'POST',
             headers : {
                 'content-type' : 'application/json'
@@ -47,7 +47,8 @@ const Purchase = () => {
         .then(res => res.json())
         .then(data => {
             if (data.insertedId) {
-                alert('purchase successfully')
+                setPurchaseConfirm(true)
+                e.target.reset()
             }
         })
         // console.log(initialDetails);
@@ -85,7 +86,11 @@ const Purchase = () => {
                         <br />
                         <input required onBlur={handleOnBlur}  className= 'py-1 mb-3 w-75' type="text" name="address" id="" placeholder='Your Address' />
                         <br />
-                        <input  className='btn btn-warning mb-3 ' type="submit" value="Purchase Now" />
+                        <input  className='btn btn-warning mb-3 ' type="submit" value="Purchase Now" /> {
+                            purchaseConfirm && <Alert  variant='success'>
+                            You Successfully Purchase . Now Waiting For Approval.
+                        </Alert>
+                        }
                         <br />
                         <img style={{width : '300px'}} src={purchaseImage} alt="" srcset="" />
                         </form>

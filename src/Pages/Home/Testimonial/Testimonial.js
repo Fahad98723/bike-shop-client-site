@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Container,} from 'react-bootstrap';
 import Rating from 'react-rating';
+import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
 
+// Import Swiper styles
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
+import SwiperCore, {
+    Pagination
+  } from 'swiper';
+
+SwiperCore.use([Pagination]);
 const Testimonial = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://shielded-inlet-60219.herokuapp.com/review')
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])
@@ -16,12 +25,14 @@ const Testimonial = () => {
                 <div className="heading mb-5">
                     <h3>What Clients Says About Us</h3>
                     <h1>TestiMonials</h1>
-                </div>
-                <Row className='g-2'>
+                </div>              
+            <Swiper slidesPerView={3} spaceBetween={30} slidesPerGroup={3} loop={true} loopFillGroupWithBlank={true} pagination={{
+            "clickable": true
+            }} navigation={false} className="mySwiper">
                 {
                     reviews.map(review => 
-                        <Col lg='4' sm='12'>
-                            <Card>
+                        <SwiperSlide className='mb-5'>
+                            <Card style={{background:'#29648a', color : 'white', padding:'20px 10px'}}>
                                 <Card.Body>
                                     <blockquote className="blockquote mb-0">
                                     <p>
@@ -37,18 +48,17 @@ const Testimonial = () => {
                                     />
                                     </p>
                                     
-                                    <footer className="blockquote-footer">
+                                    <footer className="blockquote-footer text-light">
                                         Review By <cite title="Source Title">    {review.name}</cite>
                                     </footer>
                                     </blockquote>
                                 </Card.Body>
                             </Card>
-                        </Col>
+                        </SwiperSlide>
+                            
                     )
-                }
-                </Row>
-                
-                
+                }   
+            </Swiper>
             </Container>
         </div>
     );
