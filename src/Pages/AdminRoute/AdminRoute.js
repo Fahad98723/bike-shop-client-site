@@ -5,7 +5,7 @@ import useAuth from '../../Hooks/useAuth';
 
 
 const AdminRoute = ({ children, ...rest }) => {
-    const {user,isLoading, isAdmin} = useAuth()
+    const {isLoading, isAdmin} = useAuth()
      //spinner on data loading and stoping the problem after reloading always went on login 
      if(isLoading){
         return <Spinner className = 'd-block mx-auto' animation="border" variant="danger" />
@@ -14,7 +14,7 @@ const AdminRoute = ({ children, ...rest }) => {
         <Route
       {...rest}
       render={({ location }) =>
-        user?.email && isAdmin ? (
+         isAdmin ? (
           children
         ) : (
           <Redirect
