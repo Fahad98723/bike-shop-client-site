@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Triangle Bike Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo Link
+visit my site [Triangle Bike](https://triangle-bike-shop.web.app/).
 
-## Available Scripts
+## Details
+This is a triangle bike website where you can buy your favourite bikes. To ride with your favourite bike visit our site ..
 
-In the project directory, you can run:
+* ### `motivation`
 
-### `yarn start`
+The motivation of this site from those biker and bike lovers who were ride with their bike in around the world.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* ### `Framework used`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The framework which has been used in this site is react-bootstrap it's made by react,bootstrap and raw css. We also used mongodb for database saving. For form  we used react hook form and last we used swiper slider for slider in testimonial section
 
-### `yarn test`
+* ### `Features`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In this project  you can purchase any type of bike you want. But before purchase in the site first you have to log in  with google or if you have already account then sign in with google and pass. If you were new in the site then you can create account in our site . For purchase bike you have to set your address , zip, phone number on purchase form . In your dashboard You can see your purchase or booking list on my orders
 
-### `yarn build`
+* ### `About Projects`
+This project is about a bike shop company . Where you can purchse any type of bike which are you want. To Ride your favourite bike visit the site and give your reviews in review form.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* ### `Credits`
+Especially thanks to Jhankar Bhai and his team . And last my little contribution . Suggestions and feedbacks are always welcomed. Stay safe and stay healthy😃 Thanks for everything jhankar bhai and programming hero team ......
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

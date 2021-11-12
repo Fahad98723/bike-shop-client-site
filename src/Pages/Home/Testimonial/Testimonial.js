@@ -26,9 +26,30 @@ const Testimonial = () => {
                     <h3>What Clients Says About Us</h3>
                     <h1>TestiMonials</h1>
                 </div>              
-            <Swiper slidesPerView={3} spaceBetween={30} slidesPerGroup={3} loop={true} loopFillGroupWithBlank={true} pagination={{
-            "clickable": true
-            }} navigation={false} className="mySwiper">
+            <Swiper breakpoints={{
+  "@0.00": {
+    "slidesPerView": 1,
+    "spaceBetween": 10
+  },
+  "@0.75": {
+    "slidesPerView": 1,
+    "spaceBetween": 20
+  },
+  "@1.00": {
+    "slidesPerView": 2,
+    "spaceBetween": 40
+  },
+  "@1.50": {
+    "slidesPerView": 2,
+    "spaceBetween": 50
+  },
+  "@2.00": {
+    "slidesPerView": 3,
+    "spaceBetween": 50
+  }
+}}  slidesPerView={1} spaceBetween={10} pagination={{
+    "clickable": true
+  }}  navigation={false} className="mySwiper">
                 {
                     reviews.map(review => 
                         <SwiperSlide className='mb-5'>
