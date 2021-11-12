@@ -9,6 +9,7 @@ import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../../AdminRoute/AdminRoute';
 import PrivateRoute from '../../PrivateRoute/PrivateRoute';
 import AddBikes from '../AddBikes/AddBikes';
+import AdminPanel from '../AdminPanel/AdminPanel';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllOrder from '../ManageAllOrders/ManageAllOrder';
 import ManageAllProducts from '../ManageAllProducts/ManageAllProducts';
@@ -30,7 +31,7 @@ const DashBoard = () => {
                     </div>
                     <h6 className='mx-3 my-3 fw-bold text-dark border-1'><i  className="fas fa-user-check fs-5 "></i> {user?.displayName}</h6>
                         <ul className='dashboard-navbar'>
-                                    <button className="btn btn-warning m-2">
+                                    <button className="btn btn-warning mx-2 d-flex align-items-center ">
                                     <i className="fas fa-home me-2 fs-4"></i>
                                     <Link to={`/`}>Home</Link>
                                     </button>
@@ -38,17 +39,17 @@ const DashBoard = () => {
                                {
                                 user?.email && !isAdmin && <>
                                     
-                                    <button className="btn btn-warning m-2">
+                                    <button className="btn btn-warning mx-2 d-flex align-items-center">
                                     <i className="fas fa-briefcase me-2 fs-4"></i>
                                     <Link to={`${url}`}>My Orders</Link>
                                     </button>
                                     <br />
-                                    <button className="btn btn-warning m-2">
+                                    <button className="btn btn-warning mx-2 d-flex align-items-center">
                                     <i className="fas fa-money-check-alt me-2 fs-4"></i>
                                     <Link to={`${url}/pay`}>Pay</Link>
                                     </button>
                                     <br />
-                                    <button className="btn btn-warning m-2">
+                                    <button className="btn btn-warning mx-2 d-flex align-items-center">
                                     <i className="fas fa-pen-square me-2 fs-4"></i>
                                     <Link to={`${url}/review`}>Review</Link>
                                     </button>
@@ -58,28 +59,35 @@ const DashBoard = () => {
                              
                             {
                                 isAdmin && <>
-                                <button className="btn btn-warning m-2 d-flex align-items-center">
+                                <button className="btn btn-warning mx-2 d-flex align-items-center">
                                 <i className="far fa-plus-square me-2 fs-4"></i>
                                     <Link to={`${url}`}>Add A Product</Link>
                                 </button>
 
-                                
+                                <br />
 
-                                <button className="btn btn-warning m-2 d-flex align-items-center">
+                                <button className="btn btn-warning mx-2 d-flex align-items-center">
                                 <i className="fas fa-users-cog me-2 fs-4"></i>
                                     <Link to={`${url}/makeAdmin`}>Make Admin</Link>
                                 </button>
 
+                                <br />
 
-                                <button className="btn btn-warning m-2 d-flex align-items-center">
+                                <button className="btn btn-warning mx-2 d-flex align-items-center">
                                 <i className="fas fa-cogs me-2 fs-4"></i>
                                     <Link to={`${url}/manageAllOrders`}>Manage All Orders</Link>
                                 </button>
 
+                                <br />
                                 
-                                <button className="btn btn-warning mt-2 ms-2 d-flex align-items-center">
+                                <button className="btn btn-warning mx-2 d-flex align-items-center">
                                 <i className="fas fa-diagnoses me-2 fs-4"></i>
                                     <Link to={`${url}/manageAllProducts`}>Manage All Products</Link>
+                                </button>
+                                <br />
+                                <button className="btn btn-warning mx-2 d-flex align-items-center">
+                                <i className="fas fa-users me-2 fs-4"></i>
+                                    <Link to={`${url}/adminPanel`}>Admin Lists</Link>
                                 </button>
                                 </>   
                                                             
@@ -128,9 +136,14 @@ const DashBoard = () => {
 
                             <AdminRoute path={`${path}/manageAllProducts`}>
                                 <ManageAllProducts></ManageAllProducts>
-                            </AdminRoute>                       
+                            </AdminRoute>
+
+                            <AdminRoute path={`${path}/adminPanel`}>
+                                <AdminPanel></AdminPanel>
+                            </AdminRoute>                                           
                             </>
                         }
+
                     </Switch>
                     </Col>
                 </Row>

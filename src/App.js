@@ -14,6 +14,7 @@ import Purchase from './Pages/Purchase/Purchase';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 import AuthProvider from './context/AuthProvider';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
              <PrivateRoute  path = '/purchase/:id'>
                <Purchase></Purchase>
              </PrivateRoute>
+             <Route path = '*'>
+               <NotFound></NotFound>
+             </Route>
            </Switch>
            <Footer></Footer>
         </Router>

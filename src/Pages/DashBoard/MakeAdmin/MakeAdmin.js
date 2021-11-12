@@ -8,7 +8,7 @@ const MakeAdmin = () => {
         setEmail(e.target.value)
     }
     //making user a admin
-    const handleMakeAdmin = () => {
+    const handleSubmit = e => {
         const user = {email}
         fetch('https://shielded-inlet-60219.herokuapp.com/users/admin', {
             method : 'PUT',
@@ -18,11 +18,13 @@ const MakeAdmin = () => {
             body : JSON.stringify(user)
         })
         .then(res => res.json())
-        .then(data => {
-            if (data.insertedId) {
+        .then(data => {   
+            if (data.modifiedCount) {         
                 setAdminAdded(true)
+                e.target.reset()
             }
         })
+        e.preventDefault()
     }
     return (
         <div>
@@ -33,8 +35,11 @@ const MakeAdmin = () => {
                         <h3>Want to make anyone Admin</h3>
                         <h1>Make Admin Here</h1>
                     </div>
-                <input placeholder="User's Email" className='w-100 mb-3 p-2' onBlur={handleOnBlur} type="email"/>
-                <button onClick= {handleMakeAdmin} className='btn btn-warning'>Make Admin</button> {
+                <form onSubmit={handleSubmit}>
+                    <input placeholder="User's Email" className='w-100 mb-3 p-2' onBlur={handleOnBlur} type="email"/>
+                    <button type='submit' className='btn btn-warning mb-3 fw-bold'>Make Admin</button>
+                </form>
+                {
                     adminAdded && <Alert  variant='success'>
                     You Added Admin Successfully .
                 </Alert>
