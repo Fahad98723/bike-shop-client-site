@@ -3,11 +3,15 @@ import { Container, Table } from 'react-bootstrap';
 
 const ManageAllOrder = () => {
     const [allOrders, setAllOrders] = useState([])
+
+    //all order data collect 
     useEffect(() => {
         fetch('https://shielded-inlet-60219.herokuapp.com/orderItems')
         .then(res => res.json())
         .then(data => setAllOrders(data))
     },[allOrders])
+
+    //species order data delete
     const handleDelete  = id => {
         const confirm = window.confirm("Are You Sure You Want To Cancel ?")
         if (confirm) {
@@ -24,6 +28,7 @@ const ManageAllOrder = () => {
         })
         }    
     }
+    //status data update
     const handleUpdate = id => {
         const data = allOrders.find(order => order._id === id)
         const dataUpdate = {...data}

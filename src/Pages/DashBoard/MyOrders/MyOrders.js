@@ -7,11 +7,13 @@ const MyOrders = () => {
     const {user} = useAuth()
     const [myOrders, setMyOrders] = useState([])
     const email = user?.email
+    //user my order collect
     useEffect(() => {
         fetch(`https://shielded-inlet-60219.herokuapp.com/orderItems?email=${email}`)
         .then(res => res.json())
         .then(data => setMyOrders(data))
     },[email])
+    //species order delete or cancel
     const handleDelete  = id => {
         const confirm = window.confirm("Are You Sure You Want To Cancel ?")
         if (confirm) {

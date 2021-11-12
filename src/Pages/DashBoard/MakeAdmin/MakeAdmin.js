@@ -7,6 +7,7 @@ const MakeAdmin = () => {
     const handleOnBlur = e => {
         setEmail(e.target.value)
     }
+    //making user a admin
     const handleMakeAdmin = () => {
         const user = {email}
         fetch('https://shielded-inlet-60219.herokuapp.com/users/admin', {

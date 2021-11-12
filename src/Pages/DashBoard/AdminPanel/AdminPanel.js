@@ -3,7 +3,7 @@ import React from 'react';
 const AdminPanel = () => {
     return (
         <div>
-            <h3>this is admin panle</h3>
+            <h3>this is admin panale work on it after assignment</h3>
         </div>
     );
 };

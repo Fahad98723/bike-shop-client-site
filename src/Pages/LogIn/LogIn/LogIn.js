@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import Header from '../../Shared/Header/Header';
 
 const LogIn = () => {
     const {googleSignIn,error,loginWithEmailAndPass,setError,saveUser} = useAuth()
@@ -10,7 +11,6 @@ const LogIn = () => {
     const location = useLocation()
     const history = useHistory()
     const uri = location?.state?.from?.pathname;
-    console.log(uri);
     const handleOnBlur = e => {
         const field = e.target.name
         const value = e.target.value
@@ -21,7 +21,8 @@ const LogIn = () => {
     }
     const email = user?.email
     const password = user?.password
-    
+
+    //user log in
     const emailAndPassSignIn = (email,password) => {
         loginWithEmailAndPass(email,password)
         .then(result => {
@@ -37,6 +38,7 @@ const LogIn = () => {
             setError(error.message)
         })
     }
+    //googelsigin
     const handleGoogleLogin = () => {
         googleSignIn()
         .then(result => {
@@ -62,6 +64,7 @@ const LogIn = () => {
 
     return (
         <div>
+            <Header/>
             <Container className= 'text-center py-5'>
                 <div className="heading mb-5">
                     <h3>If You Allready Have An Account Please</h3>
@@ -72,7 +75,7 @@ const LogIn = () => {
                 <br />
                 <input onBlur={handleOnBlur} className= 'py-1 mb-3' type="password" name="password" id="" placeholder='Your Password' />
                 <br />
-                <input className='btn btn-warning mb-3' type="submit" value="Signin" />
+                <input className='btn btn-warning mb-3 fw-bolder' type="submit" value="Sign in" />
                 <br />
             </form>
             <h5 className='text-danger my-1'>{error}</h5>

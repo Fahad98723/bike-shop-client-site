@@ -15,6 +15,7 @@ const Review = () => {
         reviewDetails[field] = value
         setReview(reviewDetails)
     }
+    //review send on the server
     const formHandle = e => {
         e.preventDefault()
         const data = {

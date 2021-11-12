@@ -3,12 +3,15 @@ import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 import purchaseImage from '../../images/purchase.png'
+import Header from '../Shared/Header/Header';
 const Purchase = () => {
     const [purchase, setPurchase] = useState({})
     const {user} = useAuth()
     const {id}= useParams()
     const {name, image, details, price} = purchase
     const [purchaseConfirm, setPurchaseConfirm] = useState(false)
+
+    //finding purchase item by id 
     useEffect(() => {
         fetch(`https://shielded-inlet-60219.herokuapp.com/bikes/${id}`)
         .then(res => res.json())
@@ -24,6 +27,8 @@ const Purchase = () => {
         details[field] = value
         setPurchaseDetails(details)
     }
+
+    //purchase form data send on server
 
         const handleSubmit = e => {
         e.preventDefault()
@@ -55,6 +60,8 @@ const Purchase = () => {
         // console.log(initialDetails);
     }
     return (
+        <>
+        <Header></Header>
         <div className='py-5' style={{}}>
             <Container>
                 <Row>
@@ -102,6 +109,7 @@ const Purchase = () => {
                 </Row>
             </Container>
         </div>
+        </>
     );
 };
 

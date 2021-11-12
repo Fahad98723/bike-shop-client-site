@@ -3,6 +3,7 @@ import { Container, Row } from 'react-bootstrap';
 import Bike from '../Bike/Bike';
 
 const Bikes = () => {
+    //home page bike showing only 6
     const [bikes, setBikes] = useState([])
     useEffect(() => {
         fetch('https://shielded-inlet-60219.herokuapp.com/bikes')

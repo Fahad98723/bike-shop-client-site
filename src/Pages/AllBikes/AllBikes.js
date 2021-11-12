@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Bike from '../Home/Bike/Bike';
+import Header from '../Shared/Header/Header';
 
 
 const AllBikes = () => {
+    //all bikes data taking from data base
     const [bikes, setBikes] = useState([])
     useEffect(() => {
         fetch('https://shielded-inlet-60219.herokuapp.com/bikes')
@@ -12,6 +14,8 @@ const AllBikes = () => {
     },[])
 
     return (
+        <>
+        <Header></Header>
         <div className='py-5'>
             <Container>
                 <div className="heading mb-5">
@@ -25,6 +29,7 @@ const AllBikes = () => {
                 </Row>
             </Container>
         </div>
+        </>
     );
 };
 

@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 
 const ManageAllProducts = () => {
-    const [bikes, setBikes] = useState([])
+    const [bikes, setBikes] = useState([]) 
+
+    //all bikes collect 
     useEffect(() => {
         fetch('https://shielded-inlet-60219.herokuapp.com/bikes')
         .then(res => res.json())
         .then(data => setBikes(data))
     },[])
+    //species bike delete
     const handleDelete = id => {
         const confirm = window.confirm('Are you sure you want to delete the product')
             if (confirm) {

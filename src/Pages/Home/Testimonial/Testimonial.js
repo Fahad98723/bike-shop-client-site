@@ -13,6 +13,7 @@ import SwiperCore, {
 SwiperCore.use([Pagination]);
 const Testimonial = () => {
     const [reviews, setReviews] = useState([])
+    //getting reviews from database
     useEffect(() => {
         fetch('https://shielded-inlet-60219.herokuapp.com/review')
         .then(res => res.json())
@@ -27,27 +28,28 @@ const Testimonial = () => {
                     <h1>TestiMonials</h1>
                 </div>              
             <Swiper breakpoints={{
-  "@0.00": {
-    "slidesPerView": 1,
-    "spaceBetween": 10
-  },
-  "@0.75": {
-    "slidesPerView": 1,
-    "spaceBetween": 20
-  },
-  "@1.00": {
-    "slidesPerView": 2,
-    "spaceBetween": 40
-  },
-  "@1.50": {
-    "slidesPerView": 2,
-    "spaceBetween": 50
-  },
-  "@2.00": {
-    "slidesPerView": 3,
-    "spaceBetween": 50
-  }
-}}  slidesPerView={1} spaceBetween={10} pagination={{
+                //responsive swipper slider
+            "@0.00": {
+                "slidesPerView": 1,
+                "spaceBetween": 10
+            },
+            "@0.75": {
+                "slidesPerView": 1,
+                "spaceBetween": 20
+            },
+            "@1.00": {
+                "slidesPerView": 2,
+                "spaceBetween": 40
+            },
+            "@1.50": {
+                "slidesPerView": 2,
+                "spaceBetween": 50
+            },
+            "@2.00": {
+                "slidesPerView": 3,
+                "spaceBetween": 50
+            }
+            }}  slidesPerView={1} spaceBetween={10} pagination={{
     "clickable": true
   }}  navigation={false} className="mySwiper">
                 {

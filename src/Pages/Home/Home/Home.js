@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../../Shared/Banner/Banner';
+import Header from '../../Shared/Header/Header';
 import AboutUs from '../AboutUs/AboutUs';
 import Bikes from '../Bikes/Bikes';
 import Testimonial from '../Testimonial/Testimonial';
@@ -7,9 +8,10 @@ import Testimonial from '../Testimonial/Testimonial';
 const Home = () => {
     return (
         <div>
+            <Header/>
             <Banner></Banner>
             <AboutUs></AboutUs>
-            <Bikes largeSize= '4'></Bikes>
+            <Bikes></Bikes>
             <Testimonial></Testimonial>
         </div>
     );

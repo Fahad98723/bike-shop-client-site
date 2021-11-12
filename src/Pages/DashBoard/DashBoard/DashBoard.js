@@ -9,7 +9,6 @@ import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../../AdminRoute/AdminRoute';
 import PrivateRoute from '../../PrivateRoute/PrivateRoute';
 import AddBikes from '../AddBikes/AddBikes';
-import AdminPanel from '../AdminPanel/AdminPanel';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllOrder from '../ManageAllOrders/ManageAllOrder';
 import ManageAllProducts from '../ManageAllProducts/ManageAllProducts';
@@ -26,29 +25,37 @@ const DashBoard = () => {
             <Container>
                 <Row>
                     <Col style={{background : '#d1e8e2'}} lg={3} sm={12}>
-                    <h2 className='mt-2'>DashBoard</h2>
+                    <div className="heading mt-5">
+                        <h1 className='my-2'>DashBoard</h1>
+                    </div>
+                    <h6 className='mx-3 my-3 fw-bold text-dark border-1'><i  className="fas fa-user-check fs-5 "></i> {user?.displayName}</h6>
                         <ul className='dashboard-navbar'>
+                                    <button className="btn btn-warning m-2">
+                                    <i className="fas fa-home me-2 fs-4"></i>
+                                    <Link to={`/`}>Home</Link>
+                                    </button>
+                                    <br />
                                {
                                 user?.email && !isAdmin && <>
                                     
                                     <button className="btn btn-warning m-2">
+                                    <i className="fas fa-briefcase me-2 fs-4"></i>
                                     <Link to={`${url}`}>My Orders</Link>
                                     </button>
                                     <br />
                                     <button className="btn btn-warning m-2">
+                                    <i className="fas fa-money-check-alt me-2 fs-4"></i>
                                     <Link to={`${url}/pay`}>Pay</Link>
                                     </button>
                                     <br />
                                     <button className="btn btn-warning m-2">
+                                    <i className="fas fa-pen-square me-2 fs-4"></i>
                                     <Link to={`${url}/review`}>Review</Link>
                                     </button>
                                     
                                 </>
                             }
-                              <br />
-                                    <button onClick= {logOut} className="btn btn-warning m-2">
-                                    <Link>Log Out</Link>
-                                    </button>
+                             
                             {
                                 isAdmin && <>
                                 <button className="btn btn-warning m-2 d-flex align-items-center">
@@ -71,12 +78,17 @@ const DashBoard = () => {
 
                                 
                                 <button className="btn btn-warning mt-2 ms-2 d-flex align-items-center">
-                                <i className="fas fa-diagnoses m-1 fs-4"></i>
+                                <i className="fas fa-diagnoses me-2 fs-4"></i>
                                     <Link to={`${url}/manageAllProducts`}>Manage All Products</Link>
                                 </button>
-                              
-                                </>
+                                </>   
+                                                            
                             }
+                            <br />
+                                    <button style={{fontSize : '20px'}} onClick= {logOut} className="btn btn-warning m-2 fw-bold">
+                                    <i class="fas fa-sign-out-alt me-2 fs-4"></i>
+                                    Log Out
+                                    </button>
                         </ul>  
                         </Col>    
                         <Col className='py-5' lg='9' sm='12'>

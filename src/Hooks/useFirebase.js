@@ -65,6 +65,7 @@ const  useFirebase =  () => {
           })
     }
     
+    //saving user data
     const saveUser = (email, name, method) => {
         const user =  {email, name}
         fetch('https://shielded-inlet-60219.herokuapp.com/users', {
@@ -76,6 +77,7 @@ const  useFirebase =  () => {
         })
     }
 
+    //admin checking
     useEffect( () => {
         fetch(`https://shielded-inlet-60219.herokuapp.com/users/${user?.email}`)
         .then(res => res.json())
