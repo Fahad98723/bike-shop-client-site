@@ -101,9 +101,6 @@ const DashBoard = () => {
                         </Col>    
                         <Col className='py-5' lg='9' sm='12'>
                         <Switch> 
-                        {/* <Route exact path={path}>
-                            <AdminPanel></AdminPanel>
-                        </Route> */}
                         {
                             !isAdmin && <>
                             <PrivateRoute exact path={`${path}`}>
