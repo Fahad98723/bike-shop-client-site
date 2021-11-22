@@ -8,7 +8,7 @@ const Banner = () => {
             <Container>
                 <Row >
                     <Col md={6} className='align-items-center'>
-                        <h2><span style={{color:'orange', fontFamily: `'Architects Daughter', cursive`, fontSize : '50px'}}>Be A Rider  </span> <br />
+                        <h2><span style={{color:'orange', fontFamily: `'Architects Daughter', cursive`, fontSize : '50px'}}>Be A Best Rider  </span> <br />
                         And Ride Your Favourite Bike</h2>
                     
                     <button className="btn btn-warning ">
